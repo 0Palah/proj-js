@@ -1,10 +1,9 @@
 @import './common';
 @import './utils/variables';
 @import './utils/mixins';
+@import './utils/hidden';
 
 @import './layout/header';
 @import './layout/footer';
 @import './layout/main';
 @import './layout/modal';
-
-

@@ -1,0 +1,36 @@
+.footer {
+  padding: 30px 0px 25px 0px;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 40px;
+  }
+}
+
+.footer-desc {
+  color: #939393;
+  width: 270px;
+
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 20px;
+    width: 1200px;
+  }
+}
+
+.developers-list {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-developers {
+  border: none;
+  background-color: inherit;
+  color: red;
+}
