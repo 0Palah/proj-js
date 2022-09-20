@@ -1,18 +1,59 @@
 <div class="backdrop is-hidden" data-modal>
    <div class="modal">
       <button type="button" class="button-close" data-modal-close>
-            <svg class="button__icon" width="11" height="11">
-               <use href="#close"></use>
+            <svg class="button__icon" width="17" height="17">
+               <use href="./images/sprite.svg#close-btn-icon"></use>
             </svg>
       </button>
          
             <div class="logo-form">
-               <img src="#" alt="">there should be a picture</img>
+               <picture>
+                  <source
+                  srcset="./images/modal/Rectangle-desktop-logo-min.jpg     1x,
+                           ./images/modal/Rectangle-desktop-logo-min@2x.jpg 2x"
+                     type="image/jpg"
+                     media="(min-width: 1280px)"
+                  />
+                  <source
+                  srcset="./images/modal/rectangle-tablet-logo-min.jpg     1x,
+                           ./images/modal/rectangle-tablet-logo-min@2x.jpg 2x "
+                     media="(min-width: 768px)"
+                  />
+                  <source
+                  srcset="
+                     ./images/reviews-images/rectangle-mobile-logo-min.png    1x,
+                     ./images/reviews-images/rectangle-mobile-logo-min@2x.png 2x
+                  "
+                  media="(min-width: 480px)"
+                  />
+                  <img
+                     class="poster__icon-box"
+                     src="./images/modal/picposter-desktop-min.jpg"
+                     alt="photo poster"
+                  />
+               </picture>
             </div>
          
          <div>
                <div class="poster">
-                  <img href="#" alt="">there should be a picture</img>
+                  <picture>
+                     <source
+                     srcset="./images/modal/picposter-desktop-min.jpg  1x,
+                              ./images/modal/picposter-desktop-min@2x.jpg 2x"
+                        type="image/jpg"
+                        media="(min-width: 1280px)"
+                     />
+                     <source
+                     srcset="./images/modal/pictablet-poster-min.jpg  1x,
+                              ./images/modal/pictablet-poster-min@2x.jpg 2x "
+                        media="(min-width: 768px)"
+                     />
+                     <img
+                        class="poster__icon-box"
+                        src="./images/modal/picposter-desktop-min.jpg"
+                        alt="photo poster"
+                     />
+                  </picture>
                </div>
          <div>
                <div class="description">
@@ -38,14 +79,14 @@
                      <t6 class="description__title-prise">PRICES</t6>
                         <div>  
                            <svg class="barcode" >
-                              <use href="#"></use>
+                              <use href="./images/sprite.svg#barcode-icon"></use>
                            </svg>                   
                            <p class="standart-prise">Standart 300-500 UAH</p>
                            <button type="button" class="standart-button">BUY TICKETS</button>
                         </div>      
                         <div>  
                            <svg class="barcode" >
-                              <use href="#"></use>
+                              <use href="./images/sprite.svg#barcode-icon"></use>
                            </svg>                   
                            <p class="vip-prise">VIP 1000-1500 UAH</p>
                            <button type="button" class="vip-button">BUY TICKETS</button>
