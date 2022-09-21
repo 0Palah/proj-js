@@ -45,6 +45,8 @@
     @media screen and (min-width: 1278px) {
         @content;
     }
+}
+
 @mixin transition-animation($propertes) {
     transition-property: $propertes;
     transition-duration: 250ms;
