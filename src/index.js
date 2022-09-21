@@ -11,10 +11,43 @@ console.log(btnSubmitEl);
 const headerFormEl = document.querySelector('.header__form');
 console.dir(headerFormEl);
 
+// Створюємо екземплям класу
+const developerApi = new DeveloperApi();
+
+// Викликаємо при сабміті, прослуховуємо Форму
 const onInputElSubmit = async event => {
   event.preventDefault();
-  const countryCode = searchCountryEl.value;
-  console.log(countryCode);
+
+  // записуємо searchQuery в екземпляр
+  developerApi.countryQuery = event.target.elements.country.value;
+  console.log(developerApi.countryQuery);
+  developerApi.searchQuery = event.target.elements.searching.value;
+  console.log(developerApi.searchQuery);
+
+  // скидаємо лічильник в екземплярі при новому запиті (сабміті)
+  developerApi.page = 0;
+
+  try {
+    const { data } = await developerApi.fetchDataByQuery();
+    console.log(data);
+
+    if (data.page.totalElements === 0) {
+      //   galleryListEl.innerHTML = '';
+      Notiflix.Notify.failure(
+        'Sorry, there are no events matching your search query. Please try again.'
+      );
+      return;
+    }
+
+    // відмальовую картки через хенделбарс
+    // galleryListEl.innerHTML = galleryCard(data.hits);
+
+    Notiflix.Notify.success(
+      `Hooray! We found ${data.page.totalElements} events.`
+    );
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 headerFormEl.addEventListener('submit', onInputElSubmit);
