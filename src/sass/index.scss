@@ -1,10 +1,12 @@
-@import './common';
 @import './utils/variables';
+@import './utils/utilities';
 @import './utils/mixins';
-@import './utils/hidden';
+@import './base/common';
+@import './base/container';
 
 @import './layout/header';
-@import './layout/footer';
 @import './layout/main';
-@import './layout/modal';
+@import './layout/footer';
+
+// @import './layout/modal';
 // @import './layout/modal-team';

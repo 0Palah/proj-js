@@ -1,0 +1,37 @@
+/*Приховування елементів*/
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/*Приховування модального вікна бекдропа*/
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    /*Модальне вікно*/
+    & .modal-box {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+/*Заборона прокрутки контенту поза бекдропом при відкритому модальному вікні*/
+.is-overflow {
+    overflow: hidden;
+}
+
+/*Заборона прокрутки контенту при відкритому мобільному меню*/
+.is-overflow-mobile {
+    @media screen and (max-width: 767px) {
+        overflow: hidden;
+    }
+}

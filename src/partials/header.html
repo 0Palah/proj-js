@@ -1,0 +1,57 @@
+<header class="header">
+    <div class="container">
+        <div class="header__wrraper">
+
+            <div class="header__logo-box"></div>
+
+            <!--Логотип хедера-->
+            <a class="header__logo-link" id="home" href="./">
+                <svg class="header__logo-icon" width="136px" height="70px" viewBox="0 0 136 70" preserveAspectRatio="none">
+                    <use class="header__logo" href="/src/images/icons.svg#logo"></use>
+                </svg>
+            </a>
+
+            <h1 class="header__title">FIND BEST EVENTS AROUND THE WORLD</h1>
+
+            <form class="header__form">
+
+                <span class="header__form-input-box">
+                    <label class="visually-hidden " for="searching">Enter text for start searching</label>
+                    <input class="header__form-input" id="searching" placeholder="Start searching">
+
+                    <button class="header__form-submit" type="submit">
+                        <svg class="header__form-submit-icon" width="12px" height="12px">
+                            <use href="/src/images/icons.svg#search"></use>
+                        </svg>
+                    </button>
+                </span>
+
+                <span class="header__form-input-box">
+                    <label class="visually-hidden" for="country">Choose country</label>
+                    <select class="header__form-input" id="country" placeholder="Choose country" required>
+                        <option value="" disabled selected>Choose country</option>
+                        <option value="Poland">Poland</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="USA">USA</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Deutschland">Deutschland</option>
+                        <option value="France">France</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Switzerland">Switzerland</option>
+                    </select>
+
+                    <svg class="header__form-icon" width="15px" height="10px">
+                        <use href="/src/images/icons.svg#arrow"></use>
+                    </svg>
+                </span>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="header__overlay"></div>
+
+</header>
