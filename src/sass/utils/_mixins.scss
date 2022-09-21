@@ -1,3 +1,4 @@
+
 @mixin font($fw, $fs, $lh) {
     font-weight: $fw;
     font-size: $fs;
@@ -44,4 +45,8 @@
     @media screen and (min-width: 1278px) {
         @content;
     }
+@mixin transition-animation($propertes) {
+    transition-property: $propertes;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

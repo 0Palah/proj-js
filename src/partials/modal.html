@@ -1,59 +1,98 @@
 <div class="backdrop is-hidden" data-modal>
    <div class="modal">
       <button type="button" class="button-close" data-modal-close>
-            <svg class="button__icon" width="11" height="11">
-               <use href="#close"></use>
-            </svg>
+         <svg class="button__icon" width="17" height="17">
+               <use href="./images/sprite.svg#close-btn-icon"></use>
+         </svg>
       </button>
-         
-            <div class="logo-form">
-               <img src="#" alt="">there should be a picture</img>
-            </div>
-         
-         <div>
-               <div class="poster">
-                  <img href="#" alt="">there should be a picture</img>
+      <div class="logo">
+               <picture>
+                  <source
+                  srcset="./images/modal/rectangle-desktop-logo-min.jpg     1x,
+                           ./images/modal/rectangle-desktop-logo@2x-min.jpg 2x"
+                     type="image/jpg"
+                     media="(min-width: 1280px)"
+                  />
+                  <source
+                  srcset="./images/modal/rectangle-tablet-logo-min.jpg     1x,
+                           ./images/modal/rectangle-tablet-logo@2x-min.jpg 2x"
+                     media="(min-width: 768px)"
+                  />
+                  <source
+                  srcset="
+                     ./images/modal/rectangle-mobile-logo-min.jpg    1x,
+                     ./images/modal/rectangle-mobile-logo@2x-min.jpg 2x"
+                     media="(min-width: 480px)"
+                  />
+                  <img
+                     class="logo__icon-box"
+                     src="./images/modal/rectangle-desktop-logo-min.jpg"
+                     alt="photo poster"
+                  />
+               </picture>
+      </div>
+         <div class="style-tablet-box">
+               <div class="poster-is-hidden poster">
+                  <picture>
+                     <source
+                     srcset="./images/modal/picposter-desktop-min.jpg  1x,
+                              ./images/modal/picposter-desktop@2x-min.jpg 2x"
+                        type="image/jpg"
+                        media="(min-width: 1280px)"
+                     />
+                     <source
+                     srcset="./images/modal/pictablet-poster-min.jpg  1x,
+                              ./images/modal/pictablet-poster@2x-min.jpg 2x "
+                        media="(min-width: 768px)"
+                     />
+                     <img
+                        class="poster__icon-box"
+                        src="./images/modal/picposter-desktop-min.jpg"
+                        alt="photo poster"
+                     />
+                  </picture>
                </div>
          <div>
                <div class="description">
-                  <div class="description__info">
-                     <t2 class="description__title-info">INFO</t2>
-                     <p>Atlas Weekend is the largest music festival in Ukraine.More than 200 artists will create a proper music festival atmosphere on 10 stages</p>
+                  <div class="description__box">
+                     <t2 class="description__title">INFO</t2>
+                     <p class="description__text">Atlas Weekend is the largest music festival in Ukraine.More than 200 artists will create a proper music festival atmosphere on 10 stages</p>
                   </div>   
-                  <div class="description__when">
-                     <t3 class="description__title-when">WHEN</t3>
-                     <p class="description__date">2021-06-09</p>
-                     <p class="description__time">20:00 (Kyiv/Ukraine)</p>
+                  <div class="description__box">
+                     <t3 class="description__title">WHEN</t3>
+                     <p class="description__text">2021-06-09</p>
+                     <p class="description__text">20:00 (Kyiv/Ukraine)</p>
                   </div>  
-                  <div>
-                     <t4 class="description__title-where">WHERE</t4>
-                     <p class="description__location">Kyiv, Ukraine</p>
-                     <p class="description__concert-hall">VDNH</p>
+                  <div class="description__box">
+                     <t4 class="description__title">WHERE</t4>
+                     <p class="description__text">Kyiv, Ukraine</p>
+                     <p class="description__text">VDNH</p>
                   </div> 
-                  <div>
-                     <t5 class="description__title-who">WHO</t5>
-                     <p class="description__performer">The Black Eyed Peas</p>
+                  <div class="description__box">
+                     <t5 class="description__title">WHO</t5>
+                     <p class="description__text">The Black Eyed Peas</p>
                   </div>     
-                  <div>
-                     <t6 class="description__title-prise">PRICES</t6>
-                        <div>  
-                           <svg class="barcode" >
-                              <use href="#"></use>
+                  <div class="description__box">
+                     <t6 class="description__title">PRICES</t6>
+                        <div class="description__barcode-text description__box">  
+                           <svg class="barcode" width="24" height="16">
+                              <use href="./images/sprite.svg#barcode-icon"></use>
                            </svg>                   
-                           <p class="standart-prise">Standart 300-500 UAH</p>
-                           <button type="button" class="standart-button">BUY TICKETS</button>
-                        </div>      
-                        <div>  
-                           <svg class="barcode" >
-                              <use href="#"></use>
+                           <p class="description__text standart-prise">Standart 300-500 UAH</p>
+                        </div> 
+                           <button type="button" class="description__button description__box">BUY TICKETS</button>
+                        <div class="description__barcode-text description__barcode-vip description__box ">  
+                           <svg class="barcode" width="24" height="16">
+                              <use href="./images/sprite.svg#barcode-icon"></use>
                            </svg>                   
-                           <p class="vip-prise">VIP 1000-1500 UAH</p>
-                           <button type="button" class="vip-button">BUY TICKETS</button>
-                        </div>     
+                           <p class="description__text vip-prise">VIP 1000-1500 UAH</p>
+                        </div>
+                           <button type="button" class="description__button ">BUY TICKETS</button>
                   </div>       
                </div>
+            </div>
          </div>
-            <a class="more-author" href="">MORE FROM THIS AUTHOR</a>
-         </div>
+      <a class="button-more-author" href="#">MORE FROM THIS AUTHOR</a>
    </div>
 </div>
+
