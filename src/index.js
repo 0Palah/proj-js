@@ -1,6 +1,7 @@
 import { DeveloperApi } from './js/DeveloperApi';
 import Notiflix from 'notiflix';
 // import galleryCard from './templates/gallery-card.hbs';
+import { getPagination } from './js/tui-pagination';
 
 const searchCountryEl = document.querySelector('#country');
 console.log(searchCountryEl);
@@ -30,6 +31,15 @@ const onInputElSubmit = async event => {
   try {
     const { data } = await developerApi.fetchDataByQuery();
     console.log(data);
+
+    // відправляємо запит посторінково
+    getPagination(data).on('beforeMove', async e => {
+      const currentPage = e.page;
+      developerApi.page = currentPage - 1;
+      const { data } = await developerApi.fetchDataByQuery();
+      console.log('developerApi.page', developerApi.page);
+      console.log('currentPage', currentPage);
+    });
 
     if (data.page.totalElements === 0) {
       //   galleryListEl.innerHTML = '';
