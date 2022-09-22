@@ -10,9 +10,49 @@ const btnSubmitEl = document.querySelector('.header__form-submit');
 console.log(btnSubmitEl);
 const headerFormEl = document.querySelector('.header__form');
 console.dir(headerFormEl);
+const btnDevelopersEl = document.querySelector('.btn-developers');
+console.log(btnDevelopersEl);
+const mainListEl = document.querySelector('.main-list');
 
 // Створюємо екземплям класу
 const developerApi = new DeveloperApi();
+
+// запит по id події
+const onBtnDevelopersClic = async event => {
+  event.preventDefault();
+  console.log(event.target);
+  // if (event.target === a)
+  // записуємо searchQuery в екземпляр
+  developerApi.id = 'ZfqgVMyxjZBYPzgVMyWMZd';
+  console.log(developerApi.id);
+
+  // скидаємо лічильник в екземплярі при новому запиті (сабміті)
+  developerApi.page = 0;
+
+  try {
+    const { data } = await developerApi.fetchDataByZId();
+    console.log(data);
+
+    if (data.page.totalElements === 0) {
+      //   galleryListEl.innerHTML = '';
+      Notiflix.Notify.failure(
+        'Sorry, there are no events matching your search query. Please try again.'
+      );
+      return;
+    }
+
+    // відмальовую картки через хенделбарс
+    // galleryListEl.innerHTML = galleryCard(data.hits);
+
+    Notiflix.Notify.success(
+      `Hooray! We found ${data.page.totalElements} events.`
+    );
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+mainListEl.addEventListener('click', onBtnDevelopersClic);
 
 // Викликаємо при сабміті, прослуховуємо Форму
 const onInputElSubmit = async event => {

@@ -33,13 +33,14 @@ export class DeveloperApi {
     });
   }
 
-  // fetchDataByZId() {
-  //   const searchParamsId = {
-  //     id: this.id,
-  //   };
-  //   //   Виводить результат запиту
-  //   return axios.get(`${this.#BASE_URL}`, {
-  //     params: searchParamsId,
-  //   });
-  // }
+  fetchDataByZId() {
+    const searchParamsId = {
+      apikey: this.#API_KEY,
+      id: this.id,
+    };
+    //   Виводить результат запиту
+    return axios.get(`${this.#BASE_URL}`, {
+      params: searchParamsId,
+    });
+  }
 }
