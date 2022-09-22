@@ -1,11 +1,17 @@
 .main-container {
+  margin-top: -58px;
   text-align: center;
   padding-bottom: 30px;
-  background: rgb(110, 97, 97);
+  @include for-tablet-up {
+    margin-top: -90px;
+  }
+  @include for-desktop-up {
+    margin-top: -76px;
+  }
 }
 
 .main-list {
-  padding: 0px 20px;
+  // padding: 0px 20px;
   display: flex;
   flex-wrap: wrap;
   row-gap: 32px;
@@ -13,16 +19,14 @@
   justify-content: center;
 
   @include for-tablet-up {
-    padding: 0px 32px;
+    // padding: 0px 32px;
     column-gap: 32px;
     row-gap: 32px;
   }
   @include for-desktop-up {
-    padding-top: 19px;
-    padding-right: 21px;
     margin-top: 0px;
-    column-gap: 53px;
-    row-gap: 59px;
+    column-gap: 32px;
+    row-gap: 40px;
   }
 }
 
@@ -33,12 +37,12 @@
 
   @include for-tablet-up {
     max-width: calc((100% - 96px) / 4);
-    min-height: 281px;
+    // min-height: 281px;
   }
 
   @include for-desktop-up {
     max-width: calc((100% - 96px) / 4);
-    min-height: 437px;
+    // min-height: 437px;
   }
 }
 
@@ -52,6 +56,16 @@
   padding-top: 9px;
   z-index: 1;
   width: 100%;
+  margin-bottom: 8px;
+  @include for-tablet-up {
+    padding-right: 11px;
+    padding-top: 10px;
+  }
+  @include for-desktop-up {
+    padding-right: 21px;
+    padding-top: 19px;
+    max-width: 1280px;
+  }
 }
 
 .list-item__link::before {
