@@ -43,12 +43,21 @@ const developerApi = new DeveloperApi();
 // initialize();
 
 // запит по id події
-const onBtnDevelopersClic = async event => {
+const onEventCardClick = async event => {
   event.preventDefault();
+  // попали в список  - ВИЙШЛИ
+  if (event.target.nodeName === 'UL') {
+    return;
+  }
+  // попали в посилання (локація)  - ВИЙШЛИ (замінити на функцію від гугл)
+  if (event.target.nodeName === 'A') {
+    return;
+  }
+  // Отримуємо ID івенту
   console.log(event.target);
-  // if (event.target === a)
+  console.dir(event.target.dataset.id);
   // записуємо searchQuery в екземпляр
-  developerApi.id = 'ZfqgVMyxjZBYPzgVMyWMZd';
+  developerApi.id = event.target.dataset.id;
   console.log(developerApi.id);
 
   // скидаємо лічильник в екземплярі при новому запиті (сабміті)
@@ -66,7 +75,7 @@ const onBtnDevelopersClic = async event => {
       return;
     }
 
-    // відмальовую картки через хенделбарс
+    // відмальовую картки через хенделбарс в  модалку (написати)
     // galleryListEl.innerHTML = galleryCard(data.hits);
 
     Notiflix.Notify.success(
@@ -77,7 +86,7 @@ const onBtnDevelopersClic = async event => {
   }
 };
 
-galleryList.addEventListener('click', onBtnDevelopersClic);
+galleryList.addEventListener('click', onEventCardClick);
 
 // Викликаємо при сабміті, прослуховуємо Форму
 const onInputElSubmit = async event => {
