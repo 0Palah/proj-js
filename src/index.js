@@ -78,9 +78,9 @@ const onEventCardClick = async event => {
     // відмальовую картки через хенделбарс в  модалку (написати)
     // galleryListEl.innerHTML = galleryCard(data.hits);
 
-    Notiflix.Notify.success(
-      `Hooray! We found ${data.page.totalElements} events.`
-    );
+    // Notiflix.Notify.success(
+    //   `Hooray! We found ${data.page.totalElements} events.`
+    // );
   } catch (err) {
     console.log(err);
   }
