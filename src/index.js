@@ -1,5 +1,6 @@
 import { DeveloperApi } from './js/DeveloperApi';
 import Notiflix from 'notiflix';
+
 // import galleryCard from './templates/gallery-card.hbs';
 import { getPagination } from './js/tui-pagination';
 
@@ -61,3 +62,4 @@ const onInputElSubmit = async event => {
 };
 
 headerFormEl.addEventListener('submit', onInputElSubmit);
+
