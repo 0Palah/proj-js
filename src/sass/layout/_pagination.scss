@@ -1,0 +1,46 @@
+.tui-pagination {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+
+.tui-page-btn {
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 10px 0;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 1.87;
+    cursor: pointer;
+    text-align: center;
+    color: var(--main-text-color);
+    transition: color .25s cubic-bezier(.4, 0, .2, 1);
+    &:hover {
+        box-shadow: 0.5px 0.6px 0.6px 0.7px var(--content-text-color);
+        }
+    @include for-phone-up{
+        font-size: 16px;
+    }
+
+}
+
+.tui-is-selected {
+    border: 1px solid var(--content-text-color);
+    color:var(--content-text-color);
+    font-weight: 400;
+    
+}
+
+.tui-first,
+.tui-prev,
+.tui-next,
+.tui-last {
+  display: none;
+}
+
+
+
