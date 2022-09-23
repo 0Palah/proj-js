@@ -3,14 +3,27 @@ import templateContentList from '../templates/contentList.hbs';
 export const createGalleryPosters = poster => {
   const posterCard = {};
 
-  const { dates: { start: { localDate: data } }, id, images, name, _embedded: { venues } } = poster;
+  const {
+    dates: {
+      start: { localDate: data },
+    },
+    id,
+    images,
+    name,
+    _embedded: { venues },
+  } = poster;
 
   // console.log(venues[0]);
 
-  const { city: { name: city }, location: { longitude, latitude } } = venues[0];
+  const {
+    city: { name: city },
+    location: { longitude, latitude },
+  } = venues[0];
 
   if (venues[0].address) {
-    const { address: { line1: address } } = venues[0];
+    const {
+      address: { line1: address },
+    } = venues[0];
     console.log('\naddress:', address);
 
     posterCard.address = address;
