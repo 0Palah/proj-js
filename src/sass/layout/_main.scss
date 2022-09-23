@@ -2,9 +2,14 @@
   margin-top: -58px;
   text-align: center;
   padding-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  
   @include for-tablet-up {
     margin-top: -90px;
     max-width: 768px;
+    // padding-left: 32px;
+    // padding-right: 32px;
   }
   @include for-desktop-up {
     margin-top: -76px;
@@ -34,41 +39,59 @@
 
 .list-item {
   position: relative;
-  max-width: calc((100% - 20px) / 2);
+  max-width: 130px;
+  
   
 
   @include for-tablet-up {
-    max-width: calc((100% - 96px) / 4);
+    max-width: 152px;
     // min-height: 281px;
   }
 
   @include for-desktop-up {
-    max-width: calc((100% - 96px) / 4);
+    max-width: 288px;
     // min-height: 437px;
   }
 }
 
 .list-item__link {
   text-decoration: none;
+  
 }
 
 .list-item__img {
-  position: relative;
-  padding-right: 10px;
-  padding-top: 9px;
-  z-index: 1;
+  object-fit: cover;
+  display: block;
+  height: 100%;
   width: 100%;
+}
+
+.img-block {
   margin-bottom: 8px;
+  margin-top: 9px;
+  margin-right: 10px;
+  z-index: 1;
+  position: relative;
+  border-radius: 50px 0px;
+  overflow: hidden;
+  width: 120px;
+  height: 100px;
   @include for-tablet-up {
-    padding-right: 11px;
-    padding-top: 10px;
+    width: 141px;
+    height: 120px;
+    margin-top: 10px;
+    margin-right: 11px;
   }
   @include for-desktop-up {
-    padding-right: 21px;
-    padding-top: 19px;
-    max-width: 1280px;
+    width: 267px;
+    height: 220px;
+    margin-top: 19px;
+  margin-right: 21px;
+    
   }
 }
+
+
 
 .list-item__link::before {
   content: '';
@@ -91,7 +114,7 @@
 
   @include for-desktop-up {
     width: 227px;
-    height: 213px;
+    height: 212px;
     // right: -21px;
     // top: -19px;
   }
