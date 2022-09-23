@@ -1,9 +1,57 @@
-.team-wrapper {
-  text-align: center;
-  padding: 30px;
-  max-width: 440px;
-  background-color: #fff2fd;
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 400px 20px 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(54, 54, 54, 0.8);
+  opacity: 0;
+  z-index: 2;
+  visibility: hidden;
+  pointer-events: none;
 
+  overflow: auto;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::-webkit-scrollbar {
+      @media screen and (min-width: 320px) {
+          display: none;
+      }
+}
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-team {
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0) scale(0.8);
+
+  padding: 50px;
+  min-width: 280px;
+  max-width: 440px;
+  min-height: 952px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+
+
+  text-align: center;
+  background-image: url(/src/images/team-modal/team/teambackground/modalbackground.jpg);
+  border-radius: 150px 0px;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  z-index: 3;
+  opacity: 1;
   @media screen and (min-width: 768px) {
     max-width: 704px;
   }
@@ -11,7 +59,26 @@
   @media screen and (min-width: 1280px) {
     max-width: 1034px;
   }
+  
 }
+
+
+// .team-wrapper {
+//   text-align: center;
+//   ;
+//   max-width: 440px;
+//   background-color: #fff2fd;
+
+
+// }
+.team-img{
+  display: inline-block;
+  height: 250px;
+  // width: 100%;
+  background-size: contain;
+  border-radius: 15px;
+} 
+
 
 .team-title {
   margin-bottom: 45px;
@@ -27,7 +94,7 @@
 /* Картки працівників */
 .team-item {
   width: 100%;
-  background-color: #fff;
+  
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -59,6 +126,6 @@
 /* Посада */
 .team-text {
   color: var(--secondary-text-color);
-
+  font-size: large;
   margin-bottom: 16px;
 }
