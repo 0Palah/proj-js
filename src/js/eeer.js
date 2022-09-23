@@ -1,28 +1,21 @@
 import { DeveloperApi } from './js/DeveloperApi';
 import Notiflix from 'notiflix';
+import templateContentList from './templates/contentList.hbs';
 
-import { createGalleryPosters } from './js/createGalleryPosters';
-
-// import galleryCard from './templates/gallery-card.hbs';
-import { getPagination } from './js/tui-pagination';
-
-const searchCountryEl = document.querySelector('#country');
-console.log(searchCountryEl);
-const searchingStrEl = document.querySelector('#searching');
-console.log(searchingStrEl);
-const btnSubmitEl = document.querySelector('.header__form-submit');
-console.log(btnSubmitEl);
+// const searchCountryEl = document.querySelector('#country');
+// console.log(searchCountryEl);
+// const searchingStrEl = document.querySelector('#searching');
+// console.log(searchingStrEl);
+// const btnSubmitEl = document.querySelector('.header__form-submit');
+// console.log(btnSubmitEl);
 const headerFormEl = document.querySelector('.header__form');
 console.dir(headerFormEl);
-const btnDevelopersEl = document.querySelector('.btn-developers');
-console.log(btnDevelopersEl);
+
 const galleryList = document.querySelector('.main-list');
 console.log(galleryList);
 
 // Створюємо екземплям класу
 const developerApi = new DeveloperApi();
-
-// болванка на позицію ГуглКарта
 
 // function initialize(latitude, longitude) {
 
@@ -42,42 +35,72 @@ const developerApi = new DeveloperApi();
 
 // initialize();
 
-// запит по id події
-const onBtnDevelopersClic = async event => {
-  event.preventDefault();
-  console.log(event.target);
-  // if (event.target === a)
-  // записуємо searchQuery в екземпляр
-  developerApi.id = 'ZfqgVMyxjZBYPzgVMyWMZd';
-  console.log(developerApi.id);
+const createGalleryPosters = poster => {
+  const {
+    dates: {
+      start: { localDate: data },
+    },
+    id,
+    images,
+    name,
+    _embedded: { venues },
+  } = poster;
 
-  // скидаємо лічильник в екземплярі при новому запиті (сабміті)
-  developerApi.page = 0;
+  // console.log(venues[0]);
 
+  const {
+    address: { line1: address },
+    city: { name: city },
+    location: { longitude, latitude },
+  } = venues[0];
+
+  // console.log('images:', images);
+  const image = [...images].sort((a, b) => b.height - a.height)[0].url;
+  // console.log(image);
+
+  console.log('\naddress:', address);
+  console.log('city:', city);
+  console.log('data:', data);
+  console.log('id:', id);
+  console.log('image:', image);
+  console.log('name:', name);
+  console.log('longitude:', longitude);
+  console.log('latitude:', latitude);
+  console.log('\n');
+
+  const posterCard = {};
+
+  posterCard.address = address;
+  posterCard.city = city;
+  posterCard.data = data;
+  posterCard.id = id;
+  posterCard.image = image;
+  posterCard.name = name;
+  posterCard.longitude = longitude;
+  posterCard.latitude = latitude;
+
+  return templateContentList(posterCard);
+};
+
+const getPostersbyPages = async event => {
   try {
-    const { data } = await developerApi.fetchDataByZId();
+    developerApi.page += 1;
+
+    const { data } = await developerApi.fetchDataByQuery();
     console.log(data);
 
-    if (data.page.totalElements === 0) {
-      //   galleryListEl.innerHTML = '';
-      Notiflix.Notify.failure(
-        'Sorry, there are no events matching your search query. Please try again.'
-      );
-      return;
-    }
+    const {
+      data: {
+        page: { totalElements },
+        _embedded: { events },
+      },
+    } = await developerApi.fetchDataByQuery();
 
-    // відмальовую картки через хенделбарс
-    // galleryListEl.innerHTML = galleryCard(data.hits);
-
-    Notiflix.Notify.success(
-      `Hooray! We found ${data.page.totalElements} events.`
-    );
+    //підключаєм бібліотеку пагінації
   } catch (err) {
     console.log(err);
   }
 };
-
-galleryList.addEventListener('click', onBtnDevelopersClic);
 
 // Викликаємо при сабміті, прослуховуємо Форму
 const onInputElSubmit = async event => {
@@ -114,9 +137,6 @@ const onInputElSubmit = async event => {
       return;
     }
 
-    // відмальовую картки через хенделбарс
-    // galleryListEl.innerHTML = galleryCard(data.hits);
-
     Notiflix.Notify.success(`Hooray! We found ${totalElements} events.`);
 
     let galleryListPosters = '';
@@ -133,26 +153,6 @@ const onInputElSubmit = async event => {
     // викликаємо пагінацію
     // показуємо блок пагінації
     // paginationButton.addEventListener('click', getPostersbyPages);
-    // відправляємо запит посторінково
-    getPagination(data).on('beforeMove', async e => {
-      const currentPage = e.page;
-      developerApi.page = currentPage - 1;
-      const { data } = await developerApi.fetchDataByQuery();
-      console.log(data);
-      const {
-        data: {
-          page: { totalElements },
-          _embedded: { events },
-        },
-      } = await developerApi.fetchDataByQuery();
-      galleryListPosters = '';
-      for (const poster of events) {
-        galleryListPosters += createGalleryPosters(poster);
-      }
-      galleryList.innerHTML = galleryListPosters;
-      console.log('developerApi.page', developerApi.page);
-      console.log('currentPage', currentPage);
-    });
   } catch (err) {
     console.log(err);
   }
