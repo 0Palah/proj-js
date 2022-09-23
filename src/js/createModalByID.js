@@ -70,11 +70,9 @@ export const createModalByID = async event => {
       const { info } = events[0];
       console.log('info:', info);
       console.log('\n');
-
-      modalCard.info = info;
       // modalCard.info = events[0].info;
     } else {
-      modalCard.info = 'info';
+      modalCard.info = 'More information on the website.';
     }
 
     if (events[0].priceRanges) {
