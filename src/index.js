@@ -105,8 +105,10 @@ const onInputElSubmit = async event => {
   galleryList.innerHTML = '';
 
   try {
-    // const { data } = await developerApi.fetchDataByQuery();
-    // console.log(data);
+
+    const { data } = await developerApi.fetchDataByQuery();
+    console.log(data);
+    getPagination(data).reset(-16);
 
     const {
       data,
@@ -160,8 +162,6 @@ const onInputElSubmit = async event => {
         galleryListPosters += createGalleryPosters(poster);
       }
       galleryList.innerHTML = galleryListPosters;
-      console.log('developerApi.page', developerApi.page);
-      console.log('currentPage', currentPage);
     });
   } catch (err) {
     console.log(err);
