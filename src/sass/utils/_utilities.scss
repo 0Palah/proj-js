@@ -26,13 +26,13 @@
 //}
 
 ///*Заборона прокрутки контенту поза бекдропом при відкритому модальному вікні*/
-//.is-overflow {
-//  overflow: hidden;
-//}
+.is-overflow {
+  overflow: hidden;
+}
 
 ///*Заборона прокрутки контенту при відкритому мобільному меню*/
-//.is-overflow-mobile {
-//  @media screen and (max-width: 767px) {
-//    overflow: hidden;
-//  }
-//}
+.is-overflow-mobile {
+  @media screen and (max-width: 767px) {
+    overflow: hidden;
+  }
+}
