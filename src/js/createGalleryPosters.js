@@ -36,6 +36,7 @@ export const createGalleryPosters = poster => {
   // console.log(image);
 
   console.log('city:', city);
+
   console.log('data:', data);
   console.log('id:', id);
   console.log('image:', image);
