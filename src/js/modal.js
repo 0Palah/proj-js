@@ -31,6 +31,6 @@ const onBackdropElClick = event => {
   closeModalWindow();
 };
 
-//openModalBtnEl.addEventListener('click', onOpenModalBtnElClick);
+openModalBtnEl.addEventListener('click', onOpenModalBtnElClick);
 closeModalBtnEl.addEventListener('click', closeModalWindow);
 backdropEl.addEventListener('click', onBackdropElClick);
