@@ -54,7 +54,6 @@ export const createModalByID = async event => {
             console.log('\n');
 
             modalCard.info = info;
-            // modalCard.info = events[0].info;
         } else {
             modalCard.info = 'info';
         }
@@ -86,14 +85,16 @@ export const createModalByID = async event => {
 
         console.log('venues[0]', venues[0]);
 
-        const { address: { line1: address }, city: { name: city }} = venues[0];
+        const { address: { line1: address }, city: { name: city }, country: { name: countryModalCard} } = venues[0];
 
         console.log('address:', address);
         console.log('city:', city);
+        console.log('country:', countryModalCard);
         console.log('\n');
 
         modalCard.address = address;
         modalCard.city = city;
+        modalCard.country = countryModalCard;
 
         console.log(modalCard);
 
