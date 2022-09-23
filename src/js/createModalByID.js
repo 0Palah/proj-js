@@ -61,17 +61,10 @@ export const createModalByID = async event => {
     console.log('timezone:', timezone);
     console.log('name:', name);
 
-
-            modalCard.info = info;
-        } else {
-            modalCard.info = 'info';
-        }
-
     modalCard.localDate = localDate;
     modalCard.localTime = localTime;
     modalCard.timezone = timezone;
     modalCard.name = name;
-
 
     if (events[0].info) {
       const { info } = events[0];
@@ -97,8 +90,8 @@ export const createModalByID = async event => {
       modalCard.min = min;
     } else {
       modalCard.currency = 'currency';
-      modalCard.max = 'max';
-      modalCard.min = 'min';
+      modalCard.max = 'We are working on it!';
+      modalCard.min = 'We are working on it!';
     }
 
     console.log('images:', images);
@@ -111,18 +104,26 @@ export const createModalByID = async event => {
 
     console.log('venues[0]', venues[0]);
 
+    const {
+      name: placeName,
+      address: { line1: address },
+      city: { name: city },
+      country: { name: countryModalCard },
+      url: url,
+    } = venues[0];
 
-        const { address: { line1: address }, city: { name: city }, country: { name: countryModalCard} } = venues[0];
+    console.log('address:', address);
+    console.log('city:', city);
+    console.log('country:', countryModalCard);
+    console.log('placeName:', placeName);
+    console.log(url);
+    console.log('\n');
 
-        console.log('address:', address);
-        console.log('city:', city);
-        console.log('country:', countryModalCard);
-        console.log('\n');
-
-        modalCard.address = address;
-        modalCard.city = city;
-        modalCard.country = countryModalCard;
-
+    modalCard.address = address;
+    modalCard.city = city;
+    modalCard.country = countryModalCard;
+    modalCard.placeName = placeName;
+    modalCard.url = url;
 
     console.log(modalCard);
 

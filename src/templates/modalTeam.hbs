@@ -30,12 +30,12 @@
           </div>
           <div class='description__box'>
             <h4 class='description__title'>WHERE</h4>
-            <p class='description__text'>{{this.city}}, Ukraine</p>
-            <p class='description__text'>VDNH</p>
+            <p class='description__text'>{{this.city}}, {{this.country}}</p>
+            <p class='description__text'>{{placeName}}</p>
           </div>
           <div class='description__box'>
             <h5 class='description__title'>WHO</h5>
-            <p class='description__text'>The Black Eyed Peas</p>
+            <p class='description__text'>{{this.name}}</p>
           </div>
           <div class='description__box'>
             <h6 class='description__title'>PRICES</h6>
@@ -43,22 +43,26 @@
               <svg class='barcode' width='24' height='16'>
                 <use href='./images/icons.svg#ticket'></use>
               </svg>
-              <p class='description__text standart-prise'>Standart 300-500 UAH</p>
+              <p class='description__text standart-prise'>Standart:
+                {{this.min}}
+                {{this.currency}}</p>
             </div>
-            <a class='description__button description__box'>BUY TICKETS</a>
+            <a class='description__button description__box' href='{{this.url}}>BUY TICKETS</a>
             <div
               class='description__barcode-text description__barcode-vip description__box'
             >
               <svg class='barcode' width='24' height='16'>
                 <use href='./images/icons.svg#ticket'></use>
               </svg>
-              <p class='description__text vip-prise'>VIP 1000-1500 UAH</p>
+              <p class='description__text vip-prise'>VIP:
+                {{this.min}}
+                {{this.currency}}</p>
             </div>
-            <a class='description__button'>BUY TICKETS</a>
+            <a class='description__button' href='{{this.url}}>BUY TICKETS</a>
           </div>
         </div>
       </div>
     </div>
-    <a class='button-more-author' href='#'>MORE FROM THIS AUTHOR</a>
+    <a class='button-more-author' href='{{this.url}}'>MORE FROM THIS AUTHOR</a>
   </div>
 </div>
