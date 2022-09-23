@@ -105,10 +105,11 @@ const onInputElSubmit = async event => {
   galleryList.innerHTML = '';
 
   try {
-    const { data } = await developerApi.fetchDataByQuery();
-    console.log(data);
+    // const { data } = await developerApi.fetchDataByQuery();
+    // console.log(data);
 
     const {
+      data,
       data: {
         page: { totalElements },
         _embedded: { events },
