@@ -62,7 +62,8 @@ const onInputElSubmit = async event => {
   galleryList.innerHTML = '';
 
   try {
-    const { data } = await developerApi.fetchDataByQuery();
+    const responseByQuery = await developerApi.fetchDataByQuery();
+    const { data } = responseByQuery;
     console.log(data);
     getPagination(data).reset(-16);
     headerFormEl.reset();
@@ -72,7 +73,7 @@ const onInputElSubmit = async event => {
       data: {
         page: { totalElements },
       },
-    } = await developerApi.fetchDataByQuery();
+    } = responseByQuery;
 
     let arrayPosters = null;
 
@@ -88,7 +89,7 @@ const onInputElSubmit = async event => {
         data: {
           _embedded: { events },
         },
-      } = await developerApi.fetchDataByQuery();
+      } = responseByQuery;
       console.log(events);
       arrayPosters = events;
     }
@@ -117,7 +118,7 @@ const onInputElSubmit = async event => {
       const currentPage = e.page;
       developerApi.page = currentPage - 1;
 
-      const { data } = await developerApi.fetchDataByQuery();
+      const { data } = responseByQuery;
       console.log(data);
 
       const {
@@ -125,7 +126,7 @@ const onInputElSubmit = async event => {
           page: { totalElements },
           _embedded: { events },
         },
-      } = await developerApi.fetchDataByQuery();
+      } = responseByQuery;
       galleryListPosters = '';
 
       for (const poster of events) {
@@ -159,7 +160,8 @@ const rendomGallery = async event => {
   galleryList.innerHTML = '';
 
   try {
-    const { data } = await developerApi.fetchDataByQuery();
+    const responseByQuery = await developerApi.fetchDataByQuery();
+    const { data } = responseByQuery;
     console.log(data);
     getPagination(data).reset(-16);
 
@@ -168,7 +170,7 @@ const rendomGallery = async event => {
       data: {
         page: { totalElements },
       },
-    } = await developerApi.fetchDataByQuery();
+    } = responseByQuery;
 
     let arrayPosters = null;
 
@@ -184,7 +186,7 @@ const rendomGallery = async event => {
         data: {
           _embedded: { events },
         },
-      } = await developerApi.fetchDataByQuery();
+      } = responseByQuery;
       console.log(events);
       arrayPosters = events;
     }
@@ -213,7 +215,7 @@ const rendomGallery = async event => {
       const currentPage = e.page;
       developerApi.page = currentPage - 1;
 
-      const { data } = await developerApi.fetchDataByQuery();
+      const { data } = responseByQuery;
       console.log(data);
 
       const {
@@ -221,7 +223,7 @@ const rendomGallery = async event => {
           page: { totalElements },
           _embedded: { events },
         },
-      } = await developerApi.fetchDataByQuery();
+      } = responseByQuery;
       galleryListPosters = '';
 
       for (const poster of events) {

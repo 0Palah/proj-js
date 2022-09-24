@@ -28,7 +28,8 @@ export const createModalByID = async event => {
   developerApi.page = 0;
 
   try {
-    const { data } = await developerApi.fetchDataByZId();
+    const responseById = await developerApi.fetchDataById();
+    const { data } = responseById;
     console.log(data);
 
     const modalCard = {};
@@ -38,7 +39,7 @@ export const createModalByID = async event => {
         page: { totalElements },
         _embedded: { events },
       },
-    } = await developerApi.fetchDataByZId();
+    } = responseById;
     console.log('\ntotalElements:', totalElements);
     console.log('events:', events);
     console.log('\n');
