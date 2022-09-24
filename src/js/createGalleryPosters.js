@@ -24,7 +24,7 @@ export const createGalleryPosters = poster => {
     const {
       address: { line1: address },
     } = venues[0];
-    console.log('\naddress:', address);
+    // console.log('\naddress:', address);
 
     posterCard.address = address;
   } else {
@@ -35,15 +35,15 @@ export const createGalleryPosters = poster => {
   const image = [...images].sort((a, b) => b.height - a.height)[0].url;
   // console.log(image);
 
-  console.log('city:', city);
+  // console.log('city:', city);
 
-  console.log('data:', data);
-  console.log('id:', id);
-  console.log('image:', image);
-  console.log('name:', name);
-  console.log('longitude:', longitude);
-  console.log('latitude:', latitude);
-  console.log('\n');
+  // console.log('data:', data);
+  // console.log('id:', id);
+  // console.log('image:', image);
+  // console.log('name:', name);
+  // console.log('longitude:', longitude);
+  // console.log('latitude:', latitude);
+  // console.log('\n');
 
   posterCard.city = city;
   posterCard.data = data;
