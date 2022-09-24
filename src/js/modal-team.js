@@ -1,9 +1,9 @@
 'use strict';
 
-const openModalBtnEl = document.querySelector("[data-team-modal-open]");
-const backdropEl = document.querySelector("[data-team-modal]");
-const closeModalBtnEl = document.querySelector("[data-team-modal-close]");
-console.log(closeModalBtnEl);
+const openModalBtnEl = document.querySelector('[data-team-modal-open]');
+const backdropEl = document.querySelector('[data-team-modal]');
+const closeModalBtnEl = document.querySelector('[data-team-modal-close]');
+// console.log(closeModalBtnEl);
 
 const onOpenModalBtnElClick = event => {
   backdropEl.classList.add('is-open');

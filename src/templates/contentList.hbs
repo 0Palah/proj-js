@@ -1,4 +1,5 @@
 <li class='list-item'>
+  {{!-- <button type='button' class='btn-test' data-id='{{this.id}}> --}}
   <a href='#' class='list-item__link' tabindex='-1' data-id='{{this.id}}'>
     <div class='img-block'><img
         src='{{this.image}}'
@@ -9,6 +10,7 @@
     <h3 class='list-item__title' data-id='{{this.id}}'>{{this.name}}</h3>
     <time class='list-item__date' data-id='{{this.id}}'>{{this.data}}</time>
   </a>
+  {{! </button> }}
   <a class='list-item__location-link' tabindex='-1' href='#'>{{this.city}},
     {{this.address}}
     {{!-- , coordinate: longitude [{{this.longitude}}], latitude [{{this.latitude}}] --}}

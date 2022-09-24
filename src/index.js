@@ -14,11 +14,11 @@ import { getPagination } from './js/tui-pagination';
 // const btnSubmitEl = document.querySelector('.header__form-submit');
 // console.log(btnSubmitEl);
 const headerFormEl = document.querySelector('.header__form');
-console.dir(headerFormEl);
+// console.dir(headerFormEl);
 const btnDevelopersEl = document.querySelector('.btn-developers');
-console.log(btnDevelopersEl);
+// console.log(btnDevelopersEl);
 const galleryList = document.querySelector('.main-list');
-console.log(galleryList);
+// console.log(galleryList);
 // const modalEL = document.querySelector('.modal');
 //console.log(modalEL);
 //
@@ -48,13 +48,13 @@ const developerApi = new DeveloperApi();
 // Викликаємо при сабміті, прослуховуємо Форму
 const onInputElSubmit = async event => {
   event.preventDefault();
-  console.clear();
+  // console.clear();
 
   // записуємо searchQuery в екземпляр
   developerApi.countryQuery = event.target.elements.country.value;
-  console.log(developerApi.countryQuery);
+  // console.log(developerApi.countryQuery);
   developerApi.searchQuery = event.target.elements.searching.value;
-  console.log(developerApi.searchQuery);
+  // console.log(developerApi.searchQuery);
 
   // скидаємо лічильник в екземплярі при новому запиті (сабміті)
   developerApi.page = 0;
@@ -64,7 +64,7 @@ const onInputElSubmit = async event => {
   try {
     const responseByQuery = await developerApi.fetchDataByQuery();
     const { data } = responseByQuery;
-    console.log(data);
+    // console.log(data);
     getPagination(data).reset(-16);
     headerFormEl.reset();
 
@@ -90,7 +90,7 @@ const onInputElSubmit = async event => {
           _embedded: { events },
         },
       } = responseByQuery;
-      console.log(events);
+      // console.log(events);
       arrayPosters = events;
     }
 
@@ -119,14 +119,14 @@ const onInputElSubmit = async event => {
       developerApi.page = currentPage - 1;
 
       const { data } = responseByQuery;
-      console.log(data);
+      // console.log(data);
 
       const {
         data: {
           page: { totalElements },
           _embedded: { events },
         },
-      } = responseByQuery;
+      } = await developerApi.fetchDataByQuery();
       galleryListPosters = '';
 
       for (const poster of events) {
@@ -146,7 +146,7 @@ galleryList.addEventListener('click', createModalByID);
 // ==================================================
 
 const rendomGallery = async event => {
-  console.clear();
+  // console.clear();
 
   // записуємо searchQuery в екземпляр
   //   developerApi.countryQuery = 'US';
@@ -160,9 +160,9 @@ const rendomGallery = async event => {
   galleryList.innerHTML = '';
 
   try {
-    const responseByQuery = await developerApi.fetchDataByQuery();
-    const { data } = responseByQuery;
-    console.log(data);
+    const responseByRendQuery = await developerApi.fetchDataByQuery();
+    const { data } = responseByRendQuery;
+    // console.log(data);
     getPagination(data).reset(-16);
 
     // const { data: { page: { totalElements }, _embedded: { events } } } = await developerApi.fetchDataByQuery();
@@ -170,7 +170,7 @@ const rendomGallery = async event => {
       data: {
         page: { totalElements },
       },
-    } = responseByQuery;
+    } = responseByRendQuery;
 
     let arrayPosters = null;
 
@@ -186,8 +186,8 @@ const rendomGallery = async event => {
         data: {
           _embedded: { events },
         },
-      } = responseByQuery;
-      console.log(events);
+      } = responseByRendQuery;
+      // console.log(events);
       arrayPosters = events;
     }
 
@@ -215,15 +215,15 @@ const rendomGallery = async event => {
       const currentPage = e.page;
       developerApi.page = currentPage - 1;
 
-      const { data } = responseByQuery;
-      console.log(data);
+      const { data } = responseByRendQuery;
+      // console.log(data);
 
       const {
         data: {
           page: { totalElements },
           _embedded: { events },
         },
-      } = responseByQuery;
+      } = await developerApi.fetchDataByQuery();
       galleryListPosters = '';
 
       for (const poster of events) {
