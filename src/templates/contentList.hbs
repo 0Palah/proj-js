@@ -1,15 +1,15 @@
 <li class='list-item'>
-  <a href='#' class='list-item__link' data-id='{{this.id}}'>
-    <div class="img-block"><img
-      src='{{this.image}}'
-      alt='{{this.name}}'
-      data-id='{{this.id}}'
-      class='list-item__img'
-    /></div>
+  <a href='#' class='list-item__link' tabindex='-1' data-id='{{this.id}}'>
+    <div class='img-block'><img
+        src='{{this.image}}'
+        alt='{{this.name}}'
+        data-id='{{this.id}}'
+        class='list-item__img'
+      /></div>
     <h3 class='list-item__title' data-id='{{this.id}}'>{{this.name}}</h3>
     <time class='list-item__date' data-id='{{this.id}}'>{{this.data}}</time>
   </a>
-  <a class='list-item__location-link' href='#'>{{this.city}},
+  <a class='list-item__location-link' tabindex='-1' href='#'>{{this.city}},
     {{this.address}}
     {{!-- , coordinate: longitude [{{this.longitude}}], latitude [{{this.latitude}}] --}}
   </a>

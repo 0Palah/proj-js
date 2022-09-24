@@ -33,7 +33,7 @@ export class DeveloperApi {
     });
   }
 
-  fetchDataByZId() {
+  fetchDataById() {
     const searchParamsId = {
       apikey: this.#API_KEY,
       id: this.id,
