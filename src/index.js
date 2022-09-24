@@ -19,7 +19,7 @@ const btnDevelopersEl = document.querySelector('.btn-developers');
 console.log(btnDevelopersEl);
 const galleryList = document.querySelector('.main-list');
 console.log(galleryList);
-const modalEL = document.querySelector('.modal');
+// const modalEL = document.querySelector('.modal');
 //console.log(modalEL);
 //
 // Створюємо екземплям класу
