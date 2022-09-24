@@ -1,0 +1,53 @@
+:root {
+    /*Кольори для фону секцій*/
+    --primary-section-fon: #0E0E0E;
+    --modal-fon: #FFF2FD;
+
+    /*Кольори тексту*/
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #939393;
+    --content-text-color: #DC56C5;
+
+    /*Кольори блоків, ефектів ховера і фокусу*/
+    --general-color: #4C00FE;
+    // --focus-color: #B5FF00;
+    // --hover-color: #7EB101;
+    // --active-color: #597D00;
+
+    /*Кольори тіней та затемнень*/
+    --input-fon-color: rgba(255, 255, 255, 0.2);
+    --box-shadow-1: rgba(196, 196, 196, 0.03);
+    --box-shadow-2: rgba(196, 196, 196, 0);
+    --box-shadow-3: rgba(13, 13, 13, 0);
+    --box-shadow-4: rgba(13, 13, 13, 0.19);
+    --box-shadow-5: rgba(14, 14, 14, 0.8);
+    --box-shadow-6: rgba(11, 11, 11, 0.5);
+    --backdrop: rgba(32, 13, 29, 0.6);
+
+    /*Сімейство шрифтів*/
+    --main-ff: #{'Montserrat', sans-serif};
+
+    /*Вага шрифту*/
+    --primary-fw: 400;
+    --button-fw: 500;
+    --secondary-fw: 600;
+    --general-fw: 700;
+    --header-fw: 900;
+
+    /*Розмір шрифту*/
+    --text-fs: 12px;
+    --general-fs: 14px;
+    --input-fs: 16px;
+    --header-mobile-fs: 18px;
+    --modal-title-mobile-fs: 20px;
+    --modal-title-desktop-fs: 24px;
+    --header-tablet-fs: 30px;
+    --header-desktop-fs: 50px;
+
+    /*Висота лінії шрифту*/
+    --modal-title-mobile-lh: 1.2;
+    --general-lh: 1.21;
+    --header-mobile-lh: 1.22;
+    --header-tablet-lh: 1.23;
+    --input-lh: 1.25;
+}
