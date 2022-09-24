@@ -1,0 +1,2 @@
+!function(){"use strict";var e=document.querySelector("[data-team-modal-open]"),t=document.querySelector("[data-team-modal]"),n=document.querySelector("[data-team-modal-close]"),o=function(e){t.classList.remove("is-open"),window.removeEventListener("keydown",c)},c=function(e){"Escape"===e.code&&o()};e.addEventListener("click",(function(e){t.classList.add("is-open"),window.addEventListener("keydown",c)})),n.addEventListener("click",o),t.addEventListener("click",(function(e){e.currentTarget===e.target&&o()}))}();
+//# sourceMappingURL=index.cfeea313.js.map

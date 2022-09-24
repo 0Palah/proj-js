@@ -1,0 +1,2 @@
+const e=document.querySelector("[data-team-modal-open]"),t=document.querySelector("[data-team-modal]"),d=document.querySelector("[data-team-modal-close]"),a=e=>{t.classList.remove("is-open"),window.removeEventListener("keydown",n)},n=e=>{"Escape"===e.code&&a()};e.addEventListener("click",(e=>{t.classList.add("is-open"),window.addEventListener("keydown",n)})),d.addEventListener("click",a),t.addEventListener("click",(e=>{e.currentTarget===e.target&&a()}));
+//# sourceMappingURL=index.ac8b9b0d.js.map
