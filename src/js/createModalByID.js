@@ -2,7 +2,8 @@
 import { DeveloperApi } from './DeveloperApi';
 import modalTeam from '../templates/modalTeam.hbs';
 // import modal from './modal';
-const modalEL = document.querySelector('.modal');
+const modalEL = document.querySelector('#data-modal-wrapper');
+
 const developerApi = new DeveloperApi();
 
 // запит по id події
@@ -73,7 +74,7 @@ export const createModalByID = async event => {
       const { info } = events[0];
       console.log('info:', info);
       console.log('\n');
-      // modalCard.info = events[0].info;
+      modalCard.info = events[0].info;
     } else {
       modalCard.info = 'More information on the website.';
     }
@@ -129,8 +130,45 @@ export const createModalByID = async event => {
     console.log(modalCard);
 
     // відмальовую картки через хенделбарс в  модалку (написати)
+    // return modalTeam(modalCard);
     modalEL.innerHTML = modalTeam(modalCard);
     console.log(modalTeam(modalCard));
+
+    const openModalBtnEl = document.querySelector('[data-modal-open]');
+    const backdropEl = document.querySelector('[data-modal]');
+    const closeModalBtnEl = document.querySelector('[data-modal-close]');
+
+    const onOpenModalBtnElClick = event => {
+      backdropEl.classList.add('is-open');
+
+      window.addEventListener('keydown', onEscBtnPush);
+    };
+
+    const closeModalWindow = event => {
+      backdropEl.classList.remove('is-open');
+      window.removeEventListener('keydown', onEscBtnPush);
+    };
+
+    const onEscBtnPush = event => {
+      if (event.code !== 'Escape') {
+        return;
+      }
+
+      closeModalWindow();
+    };
+
+    const onBackdropElClick = event => {
+      if (event.currentTarget !== event.target) {
+        return;
+      }
+
+      closeModalWindow();
+    };
+
+    // openModalBtnEl.addEventListener('click', onOpenModalBtnElClick);
+    closeModalBtnEl.addEventListener('click', closeModalWindow);
+    backdropEl.addEventListener('click', onBackdropElClick);
+    onOpenModalBtnElClick();
     //return modalTeam(modalCard);
     //console.log(modalEL);
     //console.log(modalTeam(modalCard));
