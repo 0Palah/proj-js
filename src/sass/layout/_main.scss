@@ -1,7 +1,7 @@
 .main-container {
   margin-top: -58px;
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
 
@@ -86,11 +86,14 @@
     margin-top: 19px;
     margin-right: 21px;
   }
-  &:hover {
-    box-shadow: 0px 0px 19px 3px rgba(220, 86, 197, 0.55);
-    -webkit-box-shadow: 0px 0px 19px 3px rgba(220, 86, 197, 0.55);
-    -moz-box-shadow: 0px 0px 19px 3px rgba(220, 86, 197, 0.55);
-  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 0px 19px 3px rgba(220,86,197,0.55);
+-webkit-box-shadow: 0px 0px 19px 3px rgba(220,86,197,0.55);
+-moz-box-shadow: 0px 0px 19px 3px rgba(220,86,197,0.55);
+    }
+
 }
 
 .list-item__link::before {
@@ -133,17 +136,23 @@
   @include for-desktop-up {
     margin-bottom: 8px;
   }
-  &:hover {
-    text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.6);
-  }
+
+  &:hover,
+  &:focus {
+    text-shadow: 0px 0px 2px rgba(255,255,255,0.6);
+    }
+
 }
 
 .list-item__date {
   display: block;
   @include transition-animation(text-shadow);
-  &:hover {
-    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.6);
-  }
+
+  &:hover,
+  &:focus {
+    text-shadow: 0px 0px 4px rgba(255,255,255,0.6);
+    }
+
   @include font(400, 14px, 17px);
   color: #ffffff;
   text-align: center;
@@ -159,9 +168,12 @@
 .list-item__location-link {
   display: block;
   @include transition-animation(text-shadow);
-  &:hover {
-    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.6);
-  }
+
+  &:hover,
+  &:focus {
+    text-shadow: 0px 0px 4px rgba(255,255,255,0.6);
+    }
+
   @include font(600, 12px, 15px);
   color: #ffffff;
   text-align: center;

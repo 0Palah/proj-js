@@ -36,12 +36,38 @@
 }
 
 .btn-developers {
+  color: var(--content-text-color);
+  font-size: 25px;
   border: none;
   background-color: transparent;
-  color: #939393;
 
   &:hover,
   &:focus-within {
     color: red;
+    -webkit-animation: heartbeat 1.5s linear infinite backwards;
+	        animation: heartbeat 1.5s linear infinite backwards;
+    @keyframes heartbeat {
+      from {
+        transform: scale(1);
+        transform-origin: center center;
+        animation-timing-function: ease-out;
+      }
+      10% {
+        transform: scale(0.7);
+        animation-timing-function: ease-in;
+      }
+      17% {
+        transform: scale(0.98);
+        animation-timing-function: ease-out;
+      }
+      33% {
+        transform: scale(0.7);
+        animation-timing-function: ease-in;
+      }
+      45% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+      }
+    }
   }
 }
