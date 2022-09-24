@@ -1,8 +1,7 @@
-    'use strict';
-
-const openModalBtnEl = document.querySelector("[data-modal-open]");
-const backdropEl = document.querySelector("[data-modal]");
-const closeModalBtnEl = document.querySelector("[data-modal-close]");
+'use strict';
+const openModalBtnEl = document.querySelector('[data-modal-open]');
+const backdropEl = document.querySelector('[data-modal]');
+const closeModalBtnEl = document.querySelector('[data-modal-close]');
 
 const onOpenModalBtnElClick = event => {
   backdropEl.classList.add('is-open');
@@ -31,6 +30,6 @@ const onBackdropElClick = event => {
   closeModalWindow();
 };
 
-//openModalBtnEl.addEventListener('click', onOpenModalBtnElClick);
+// openModalBtnEl.addEventListener('click', onOpenModalBtnElClick);
 closeModalBtnEl.addEventListener('click', closeModalWindow);
 backdropEl.addEventListener('click', onBackdropElClick);

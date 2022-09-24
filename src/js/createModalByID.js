@@ -1,6 +1,8 @@
+'use strict';
 import { DeveloperApi } from './DeveloperApi';
-import modalTeam from '../templates/modalTeam.hbs'
-
+import modalTeam from '../templates/modalTeam.hbs';
+// import modal from './modal';
+const modalEL = document.querySelector('.modal');
 const developerApi = new DeveloperApi();
 
 // запит по id події
@@ -127,10 +129,13 @@ export const createModalByID = async event => {
     console.log(modalCard);
 
     // відмальовую картки через хенделбарс в  модалку (написати)
-   // modalEL.innerHTML = galleryCard(data.hits);
-//return modalTeam(modalCard);
-//console.log(modalEL);
-//console.log(modalTeam(modalCard));
+    modalEL.innerHTML = modalTeam(modalCard);
+    console.log(modalTeam(modalCard));
+    //return modalTeam(modalCard);
+    //console.log(modalEL);
+    //console.log(modalTeam(modalCard));
+
+    // onOpenModalBtnElClick();
 
     // Notiflix.Notify.success(
     //   `Hooray! We found ${data.page.totalElements} events.`
