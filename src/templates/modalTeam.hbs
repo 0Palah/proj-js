@@ -1,68 +1,66 @@
-<div class='backdrop' data-modal>
-  <div class='modal'>
-    <button type='button' class='button-close' data-modal-close>
-      <svg class='button__icon' width='17' height='17'>
-        <use href='./images/icons.svg#close'></use>
-      </svg>
-    </button>
-    <div class='logo'>
-      <img class='logo__icon-box' src='{{this.image}}' alt='{{this.name}}' />
-    </div>
-    <div class='style-tablet-box'>
-      <div class='poster-is-hidden poster'>
-        <img
-          class='poster__icon-box'
+ <button type="button" class="button-close" data-modal-close>
+         <svg class="button__icon" width="17" height="17">
+               <use href="./images/icons.svg#close"></use>
+         </svg>
+      </button>
+         <div class="logo">
+               <img class='logo__icon-box' src='{{this.image}}' alt='{{this.name}}' />
+         </div>
+         <div class="poster-is-hidden poster">
+   <img
+          class='poster__icon'
           src='{{this.image}}'
           alt='{{this.name}}'
         />
-      </div>
-      <div>
-        <div class='description'>
-          <div class='description__box'>
-            <h2 class='description__title'>INFO</h2>
-            <p class='description__text'>{{this.info}}</p>
-          </div>
-          <div class='description__box'>
-            <h3 class='description__title'>WHEN</h3>
+         </div>
+               <div class="description">
+                  <div class="description__first-box">  
+                     <div class="description__box description__box-tablet">
+                        <h2 class="description__title">INFO</h2>
+                           <p class='description__text'>{{this.info}}</p>
+                     </div>   
+                     <div class="description__box description__box-tablet">
+                        <h3 class="description__title">WHEN</h3>
             <p class='description__text'>{{this.localDate}}</p>
             <p class='description__text'>{{this.localTime}}
               ({{this.timezone}})</p>
-          </div>
-          <div class='description__box'>
-            <h4 class='description__title'>WHERE</h4>
+                     </div>  
+                  </div>     
+                  <div class="description__second-box">
+                     <div class="description__box description__box-where">
+                        <h4 class="description__title">WHERE</h4>
             <p class='description__text'>{{this.city}}, {{this.country}}</p>
             <p class='description__text'>{{placeName}}</p>
-          </div>
-          <div class='description__box'>
-            <h5 class='description__title'>WHO</h5>
+                     </div> 
+                     <div class="description__box">
+                        <h5 class="description__title">WHO</h5>
             <p class='description__text'>{{this.name}}</p>
-          </div>
-          <div class='description__box'>
-            <h6 class='description__title'>PRICES</h6>
-            <div class='description__barcode-text description__box'>
-              <svg class='barcode' width='24' height='16'>
-                <use href='./images/icons.svg#ticket'></use>
-              </svg>
-              <p class='description__text standart-prise'>Standart:
+                     </div>    
+                  </div>
+               </div>
+                     <h6 class="description__title description__title-prices">PRICES</h6>
+                  <div class="style-prices">
+                     <div> 
+                     <div class="description__barcode-text">  
+                           <svg class="barcode" width="24" height="16">
+                              <use href="./images/icons.svg#ticket"></use>
+                           </svg>                   
+                                         <p class='description__text standart-prise'>Standart:
                 {{this.min}}
                 {{this.currency}}</p>
-            </div>
-            <a class='description__button description__box' href='{{this.url}}>BUY TICKETS</a>
-            <div
-              class='description__barcode-text description__barcode-vip description__box'
-            >
-              <svg class='barcode' width='24' height='16'>
-                <use href='./images/icons.svg#ticket'></use>
-              </svg>
+                        </div>
+                           <a  class="description__button">BUY TICKETS</a>
+                     </div>
+                     <div>
+                        <div class="description__barcode-text">  
+                           <svg class="barcode" width="24" height="16">
+                              <use href="./images/icons.svg#ticket"></use>
+                           </svg>                   
               <p class='description__text vip-prise'>VIP:
                 {{this.min}}
                 {{this.currency}}</p>
-            </div>
-            <a class='description__button' href='{{this.url}}>BUY TICKETS</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <a class='button-more-author' href='{{this.url}}'>MORE FROM THIS AUTHOR</a>
-  </div>
-</div>
+                        </div>
+                           <a  class="description__button ">BUY TICKETS</a>
+                     </div>
+                  </div>
+          <a class='button-more-author' href='{{this.url}}'>MORE FROM THIS AUTHOR</a>
