@@ -1,4 +1,5 @@
 'use strict';
+import pathToSprite from '../images/icons.svg';
 import { DeveloperApi } from './DeveloperApi';
 import modalTeam from '../templates/modalTeam.hbs';
 // import modal from './modal';
@@ -21,8 +22,8 @@ export const createModalByID = async event => {
 
   // записуємо searchQuery в екземпляр
   developerApi.id = event.target.dataset.id;
-  console.log('\n');
-  console.log(developerApi.id);
+  // console.log('\n');
+  // console.log(developerApi.id);
 
   // скидаємо лічильник в екземплярі при новому запиті (сабміті)
   developerApi.page = 0;
@@ -30,7 +31,7 @@ export const createModalByID = async event => {
   try {
     const responseById = await developerApi.fetchDataById();
     const { data } = responseById;
-    console.log(data);
+    // console.log(data);
 
     const modalCard = {};
 
@@ -40,9 +41,9 @@ export const createModalByID = async event => {
         _embedded: { events },
       },
     } = responseById;
-    console.log('\ntotalElements:', totalElements);
-    console.log('events:', events);
-    console.log('\n');
+    // console.log('\ntotalElements:', totalElements);
+    // console.log('events:', events);
+    // console.log('\n');
 
     let {
       dates: {
@@ -61,10 +62,10 @@ export const createModalByID = async event => {
 
     // localTime = localTime.slice(0, 5);
 
-    console.log('localDate:', localDate);
-    console.log('localTime:', localTime);
-    console.log('timezone:', timezone);
-    console.log('name:', name);
+    // console.log('localDate:', localDate);
+    // console.log('localTime:', localTime);
+    // console.log('timezone:', timezone);
+    // console.log('name:', name);
 
     modalCard.localDate = localDate;
     modalCard.localTime = localTime;
@@ -73,8 +74,8 @@ export const createModalByID = async event => {
 
     if (events[0].info) {
       const { info } = events[0];
-      console.log('info:', info);
-      console.log('\n');
+      // console.log('info:', info);
+      // console.log('\n');
       modalCard.info = events[0].info;
     } else {
       modalCard.info = 'More information on the website.';
@@ -83,10 +84,10 @@ export const createModalByID = async event => {
     if (events[0].priceRanges) {
       const { currency, max, min } = events[0].priceRanges[0];
 
-      console.log('currency', currency);
-      console.log('max', max);
-      console.log('min', min);
-      console.log('\n');
+      // console.log('currency', currency);
+      // console.log('max', max);
+      // console.log('min', min);
+      // console.log('\n');
 
       modalCard.currency = currency;
       modalCard.max = max;
@@ -97,15 +98,15 @@ export const createModalByID = async event => {
       modalCard.min = 'We are working on it!';
     }
 
-    console.log('images:', images);
+    // console.log('images:', images);
     const image = [...images].sort((a, b) => b.height - a.height)[0].url;
 
-    console.log('image', image);
-    console.log('\n');
+    // console.log('image', image);
+    // console.log('\n');
 
     modalCard.image = image;
 
-    console.log('venues[0]', venues[0]);
+    // console.log('venues[0]', venues[0]);
 
     const {
       name: placeName,
@@ -115,25 +116,27 @@ export const createModalByID = async event => {
       url: url,
     } = venues[0];
 
-    console.log('address:', address);
-    console.log('city:', city);
-    console.log('country:', countryModalCard);
-    console.log('placeName:', placeName);
-    console.log(url);
-    console.log('\n');
+    // console.log('address:', address);
+    // console.log('city:', city);
+    // console.log('country:', countryModalCard);
+    // console.log('placeName:', placeName);
+    // console.log(url);
+    // console.log('\n');
 
     modalCard.address = address;
     modalCard.city = city;
     modalCard.country = countryModalCard;
     modalCard.placeName = placeName;
     modalCard.url = url;
+    modalCard.spriteUrl = pathToSprite;
 
-    console.log(modalCard);
+    // console.log(modalCard);
 
     // відмальовую картки через хенделбарс в  модалку (написати)
     // return modalTeam(modalCard);
     modalEL.innerHTML = modalTeam(modalCard);
-    console.log(modalTeam(modalCard));
+
+    // console.log(modalTeam(modalCard));
 
     const openModalBtnEl = document.querySelector('[data-modal-open]');
     const backdropEl = document.querySelector('[data-modal]');
