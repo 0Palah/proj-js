@@ -1,4 +1,5 @@
 import { DeveloperApi } from './DeveloperApi';
+import modalTeam from '../templates/modalTeam.hbs'
 
 const developerApi = new DeveloperApi();
 
@@ -126,7 +127,10 @@ export const createModalByID = async event => {
     console.log(modalCard);
 
     // відмальовую картки через хенделбарс в  модалку (написати)
-    // galleryListEl.innerHTML = galleryCard(data.hits);
+   // modalEL.innerHTML = galleryCard(data.hits);
+//return modalTeam(modalCard);
+//console.log(modalEL);
+//console.log(modalTeam(modalCard));
 
     // Notiflix.Notify.success(
     //   `Hooray! We found ${data.page.totalElements} events.`
