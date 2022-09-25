@@ -130,7 +130,7 @@ export const createModalByID = async event => {
     modalCard.url = url;
     modalCard.spriteUrl = pathToSprite;
 
-    // console.log(modalCard);
+    console.log(modalCard);
 
     // відмальовую картки через хенделбарс в  модалку (написати)
     // return modalTeam(modalCard);

@@ -134,6 +134,11 @@ const onInputElSubmit = async event => {
       }
 
       galleryList.innerHTML = galleryListPosters;
+
+      window.scrollBy({
+        top: -document.documentElement.scrollTop,
+        behavior: 'smooth',
+      });
     });
 
     const { height: cardHeight } = document
@@ -144,7 +149,6 @@ const onInputElSubmit = async event => {
       top: cardHeight * 1.2,
       behavior: 'smooth',
     });
-    console.log(window);
   } catch (err) {
     console.log(err);
   }
@@ -241,6 +245,10 @@ const rendomGallery = async event => {
       }
 
       galleryList.innerHTML = galleryListPosters;
+      window.scrollBy({
+        top: -document.documentElement.scrollTop,
+        behavior: 'smooth',
+      });
     });
   } catch (err) {
     console.log(err);
