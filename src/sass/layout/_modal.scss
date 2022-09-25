@@ -20,10 +20,10 @@
   pointer-events: auto;
 }
 .modal {
-  position: relative;
-  top: 50%;
+  position: absolute;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, 0);
   padding: 80px 16px 100px 21px;
   min-width: 280px;
   max-width: 440px;
@@ -46,6 +46,8 @@
   background: #fff2fd;
   justify-content: center;
   align-items: center;
+  padding-top: 5px;
+  border-radius: 6px;
   cursor: pointer;
 }
 .button__icon {
@@ -62,9 +64,10 @@
 }
 .logo__icon-box {
   border-radius: 50%;
-  min-width: 102px;
-  min-height: 102px;
+  width: 102px;
+  height: 102px;
   background: #c4c4c4;
+  object-fit: cover;
 }
 .poster-is-hidden {
   display: none;
@@ -215,6 +218,7 @@
   }
   .poster {
     display: flex;
+    object-fit: cover;
   }
   .poster__icon {
     width: 900px;
