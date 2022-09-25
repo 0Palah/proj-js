@@ -135,6 +135,16 @@ const onInputElSubmit = async event => {
 
       galleryList.innerHTML = galleryListPosters;
     });
+
+    const { height: cardHeight } = document
+      .querySelector('.list-item')
+      .firstElementChild.getBoundingClientRect();
+
+    window.scrollBy({
+      top: cardHeight * 1.2,
+      behavior: 'smooth',
+    });
+    console.log(window);
   } catch (err) {
     console.log(err);
   }

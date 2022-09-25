@@ -34,9 +34,7 @@ export const createGalleryPosters = poster => {
   // console.log('images:', images);
   const image = [...images].sort((a, b) => b.height - a.height)[0].url;
   // console.log(image);
-
   // console.log('city:', city);
-
   // console.log('data:', data);
   // console.log('id:', id);
   // console.log('image:', image);
