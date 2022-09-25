@@ -41,7 +41,7 @@
 
   font-family: 'Montserrat';
   font-style: normal;
-
+  // object-fit: cover;
   text-align: center;
   background-image: url(/src/images/team-modal/team/teambackground/modalbackground.jpg);
   border-radius: 150px 0px;
@@ -85,16 +85,21 @@
 .team-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  column-gap: 30px;
+  row-gap: 60px;
 }
 
 /* Картки працівників */
 .team-item {
+  overflow: hidden;
   width: 100%;
-
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
+  background-color: black;
+  // box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  //   0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 19px 3px rgba(220, 86, 197, 0.55);
+    -webkit-box-shadow: 0px 0px 19px 3px rgba(220, 86, 197, 0.55);
+    -moz-box-shadow: 0px 0px 19px 3px rgba(220, 86, 197, 0.55);
+  border-radius: 50px 0px 50px 4px;
   padding: 5px;
 
   @media screen and (min-width: 768px) {
@@ -126,3 +131,4 @@
   font-size: large;
   margin-bottom: 16px;
 }
+
